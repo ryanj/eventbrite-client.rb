@@ -16,7 +16,7 @@ For the latest information on this project, take a look at:
 
 ###Loading the Eventbrite API Client library code###
 
-    require eventbrite-client
+    require 'eventbrite-client'
 
 ###Initializing the client###
 Your API / Application key is required to initialize the client - http://eventbrite.com/api/key

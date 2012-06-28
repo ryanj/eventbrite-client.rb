@@ -61,7 +61,7 @@ class EventbriteWidgets
   end
 
   def self.buttonWidget(evnt)
-    "<a href='http://www.eventbrite.com/event/#{evnt['id']}?ref=ebtn' target='_blank'><img border='0' src='http://www.eventbrite.com/registerbutton?eid=#{evnt['id']}' alt='Register for #{evnt['title']} on Eventbrite' /></a>"
+    "<a href='http://www.eventbrite.com/event/#{evnt['id']}?ref=ebtn' target='_blank'><img border='0' src='http://www.eventbrite.com/custombutton?eid=#{evnt['id']}' alt='Register for #{evnt['title']} on Eventbrite' /></a>"
   end
 
   def self.linkWidget(evnt, text=nil, color='#000000')

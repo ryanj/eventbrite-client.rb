@@ -49,6 +49,8 @@ Rendering an event in html as a [ticketWidget](http://www.eventbrite.com/t/how-t
     response = eb_client.event_get({ id: 1848891083})
     widget_html = EventbriteWidgets::ticketWidget(response['event'])
 
+Additional widget examples are available [on developer.eventbrite.com](http://developer.eventbrite.com/doc/widgets/#ruby)
+
 ##Resources##
 * API Documentation - <http://developer.eventbrite.com/doc/>
 * API QuickStart Guide - <http://developer.eventbrite.com/doc/getting-started/>

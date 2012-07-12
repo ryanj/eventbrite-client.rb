@@ -14,13 +14,13 @@ class EventbriteClient
         #use api_key OR api_key + user_key OR api_key+email+pass
         if auth_tokens.include? :user_key
           # read/write access on the user account associated with :user_key
-          @auth = {app_key: auth_tokens[:app_key], user_key: auth_tokens[:user_key]}
+          @auth = {:app_key => auth_tokens[:app_key], :user_key => auth_tokens[:user_key]}
         elsif auth_tokens.include?(:user) && auth_tokens.include?(:password)
           # read/write access on the user account matching this login info 
-          @auth = {app_key: auth_tokens[:app_key], user: auth_tokens[:user], :password => auth_tokens[:password]}
+          @auth = {:app_key => auth_tokens[:app_key], :user => auth_tokens[:user], :password => auth_tokens[:password]}
         else
           # read-only access to public data
-          @auth = {app_key: auth_tokens[:app_key]}
+          @auth = {:app_key => auth_tokens[:app_key]}
         end
       end 
     end
@@ -31,7 +31,7 @@ class EventbriteClient
   def method_request( method, params )
     #merge auth params into our request querystring
     querystring = @auth.merge( params.is_a?(Hash) ? params : {} )
-    resp = self.class.get("/#{@data_type}/#{method.to_s}",{query: querystring})
+    resp = self.class.get("/#{@data_type}/#{method.to_s}",{:query => querystring})
     if resp['error'] 
       raise RuntimeError, resp['error']['error_message'], caller[1..-1]
     end

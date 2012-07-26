@@ -5,7 +5,7 @@ class EventbriteClient
 
   def initialize( auth_tokens )
     @auth = {}
-    @data_type = 'json'
+    @data_type = (auth_tokens.is_a?(Hash) and auth_tokens.include? :data_type) ? auth_tokens[:data_type] : 'json'
     if auth_tokens.is_a? Hash
       if auth_tokens.include? :access_token
         # use oauth2 authentication tokens
